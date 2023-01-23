@@ -1,0 +1,217 @@
+Linux Basic Commands
+
+1.	Basic commands
+2.	Text handling
+3.	system administration
+4.	Text Processing
+5.	Process Management
+6.	Archival
+7.	Network
+8.	File Systems
+9.	Advanced Commands
+
+
+
+
+
+
+
+
+
+
+1.	Basic commands
+#mkdir = create folder
+#mkdir /foldername = create folder in /
+#rmdir = empty folder delete
+#rm -rf foldername = delete any folder
+#rm filename = delete file
+#date = show date
+#time = show time
+#cd .. = change directory
+#pwd = show path
+#ls = list directory
+#ls -a = show hidden file
+#touch = create blank file
+#history = show commands history
+#history -c = clear commands history #cal = show calander
+#cal anyyear = show year calander
+#useradd username = add user
+#passwd username = set user password
+#userdel username = delete user account
+#userdel -r username = delete user account with all files
+#su - username = login user in terminal
+#useradd -s /sbin/nologin username = create user with nologin
+#usermod = changes in already create user
+#useradd -u 2000 username = create user with any user ID (2000,1500,3000etc.)
+#groupadd groupname = create group
+#useradd -G groupname username = create user (add in group)
+#usermod -G groupname username = user add in group(already create user account)
+#usermod -l newname oldname = change user login name
+#usermod -c "add comment" username = add comment in user
+#cat = show file
+#ls -ld /foldername = show folder permission
+#chmod 770 /foldername = give permission to folder
+4=read
+2=write
+1=execute
+#chgrp groupname /foldername = give group ownership
+#vim filename = edit file in terminal
+#cp /copyfilelocation /savefilelocation= copy file
+example :- cp /etc/fstab /var/tmp
+#getfacl filename = show advance permission
+#setfacl -m u:username:rwx filename = set advanced permission
+r = read
+w = write
+x = execute
+- = give no permission
+compresse file #du -sh /filename = show folder size
+#tar -cvf newname.tar /foldername = compresse in tar
+#bzip2 newname.tar = compresse in bzip2
+#gzip newname.tar = compresse in gzip
+#xz newname.tar = compresse in xz
+
+
+2.	 Text handling
+#mkdir – make directories
+Usage: mkdir [OPTION] DIRECTORY...
+eg. mkdir soni
+2. #ls – list directory contents
+Usage: ls [OPTION]... [FILE]...
+eg. ls, ls l,
+ls prabhat
+3.#cd – changes directories
+Usage: cd [DIRECTORY]
+eg. cd soni
+4.#pwd print
+name of current working directory
+eg. pwd
+5.#vim – Vi Improved, a programmers text editor
+Usage: vim [OPTION] [file]...
+eg. vim file.txt
+6.#cp – copy files and directories
+Usage: cp [OPTION]... SOURCE DEST
+eg. cp sample.txt sample_copy.txt
+7.#mv – move (rename) files
+Usage: mv [OPTION]... SOURCE DEST
+eg. mv old.txt new.txt
+8.#rm remove files or directories
+Usage: rm [OPTION]... FILE...
+eg. rm file1.txt , rm rf
+9.#find – search for files in a directory hierarchy
+Usage: find [OPTION] [path] [pattern]
+eg. find file1.txt, find name
+file1.txt
+10.#history – prints recently used commands
+Usage: history
+
+
+         3. system administration
+11.#chmod – change file access permissions
+Usage: chmod [OPTION] [MODE] [FILE]
+eg. chmod 744 calculate.sh12.#chown – change file owner and group
+Usage: chown [OPTION]... OWNER[:(GROUP)] FILE...
+eg. chown remo myfile.txt
+13.#su – change user ID or become superuser
+Usage: su [USERNAME] [LOGIN]
+eg. su remo, su
+14.#passwd – update a user’s authentication tokens(s)
+Usage: passwd [USER NAME]
+eg. passwd
+15.#who – show who is logged on
+Usage: who [OPTION]
+eg. who , who d
+
+
+4.	 Text Processing
+16.#cat – concatenate files and print on the standard output
+Usage: cat [OPTION] [FILE]...
+eg. cat file1.txt17.#echo – display a line of text
+Usage: echo [OPTION] [string] ...
+eg. echo hello friends
+18.#grep - print lines matching a pattern
+Usage: grep - [OPTION] PATTERN [FILE]...
+eg. grep i apple sample.txt
+19.#wc - print the number of newlines, words, and bytes in files
+Usage: wc - [OPTION]... [FILE]...
+eg. wc file1.txt
+wc L file1.txt
+20.#sort – sort lines of text files
+Usage: sort [OPTION]... [FILE]...
+eg. sort file1.txt
+sort r file1.txt
+
+5.	 Process Management21.#ps – report a snapshot of the current processes
+Usage: ps [OPTION]
+eg. ps, ps el22.#kill – to kill a process(using signal mechanism)
+Usage: kill [OPTION] pid
+eg. kill 9 2275
+23.#bg – make a foreground process to run in background
+Usage: type 'ctrl+z' and then 'bg '
+24.#fg – to make background process as foreground process
+Usage: fg [jobid]
+25.#jobs – displays the names and ids of background jobs
+Usage: jobs
+
+6.	  Archival
+26.#tar – to archive a file Usage: tar [OPTION] DEST SOURCE
+eg. tar cvf
+/home/archive.tar /home/original
+tar xvf /home/archive.tar27.#zip – package and compress (archive) files
+Usage: zip [OPTION] DEST SOURSE
+eg. zip original.zip original
+28.#unzip – list, test and extract compressed files in a ZIP archive
+Usage: unzip filename
+eg. unzip original.zip
+
+
+
+
+
+7.	 Network
+29.#ping - ping desktop
+eg. ping desktopX.example.com30.#ssh – SSH client (remote login program)
+“ssh is a program for logging into a remote machine and for
+executing commands on a remote machine”
+Usage: ssh [options] [user]@hostname
+eg. ssh X guest@10.105.11.20
+31.#scp – secure copy (remote file copy program)
+“scp copies files between hosts on a network”
+Usage: scp [options] [[user]@host1:file1] [[user]@host2:file2]
+eg. scp file1.txt guest@10.105.11.20:~/Desktop/
+
+
+8.	 File Systems
+32.#fdisk – partition manipulator
+eg. sudo fdisk -l33.#mount – mount a file system
+Usage: mount -t type device dir
+eg. mount /dev/sda5 /media/target
+34.#umount – unmount file systems
+Usage: umount [OPTIONS] dir | device...
+eg. umount /media/target
+35.#du – estimate file space usage
+Usage: du [OPTION]... [FILE]...
+eg. du
+36.#df – report filesystem disk space usage
+eg. df -h
+37.#quota – display disk usage and limits
+Usage: quota [OPTION]
+eg. quota v
+
+9.	Advanced Commands
+38.#reboot – reboot the system
+Usage: reboot [OPTION]
+eg. reboot39.#poweroff – power off the system
+Usage: poweroff [OPTION]
+eg. poweroff
+40.#sed stream
+editor for filtering and transforming text
+Usage: sed [OPTION] [inputfile]...
+eg. sed 's/love/hate/g' loveletter.txt
+41.#awk pattern
+scanning and processing language
+
+eg. awk F: '{ print $1 }' sample_awk.txt
+42.#locate – find or locate a file
+Usage: locate [OPTION]... FILE...
+eg. locate file1.txt
+
